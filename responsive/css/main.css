@@ -41,9 +41,10 @@ i {
         padding-left: 10px;
         padding-right: 10px;
     }
+    
     header {
-    background-image: url("../img/banner.jpg");
-    background-size: cover;
-    background-position: center;
+        background-image: url("../img/banner.jpg");
+        background-size: cover;
+        background-position: center;
     }
 }
