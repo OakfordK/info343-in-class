@@ -9,6 +9,14 @@ body {
     and is 50px tall, we need that much padding so that
     the content doesn't start under the navbar*/
     padding-top: 50px;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Raleway;
 }
 
 .jumbotron {
