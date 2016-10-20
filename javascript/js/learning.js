@@ -41,9 +41,13 @@ console.group("PRACTICE: Variables and Basic Types");
 //Create another variable named `y`, assign it the value
 //currently held in the variable `x`, and write the value
 //of `y` to the console log
+<<<<<<< HEAD
 var y = x;
 y = 10;
 console.log("X is " + x);
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 //now assign `y` the numeric value 10
 //what does x contain now? Write it to the console
@@ -80,16 +84,24 @@ console.group("PRACTICE: Strings");
 //with some text, and then create another string `s4`
 //and assign it the concatenation of `s2` and `s3`
 //then write it to the console so you can verify it worked.
+<<<<<<< HEAD
 var s2 = "cat"
 var s3 = "dog"
 
 var s4 = s2+s3;
 console.log("Cartoon show from the old days: " + s4);
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 //use the `.trim()` method to remove the leading and
 //trailing white space from this string
 var withSpaces = "    trim those spaces!     ";
+<<<<<<< HEAD
 console.log(withSpaces.trim());
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 console.groupEnd();
 
@@ -164,6 +176,7 @@ console.group("PRACTICE: Objects");
 //now try adding a property named `web site` (with a space)
 //setting it to some string value...it's tricky...
 
+<<<<<<< HEAD
 var course2 = {
     department: "CSE",
     number: "413",
@@ -176,6 +189,9 @@ var course2 = {
 };
 course2["web site"] = "https://www.cs.washington.edu/413";
 console.log(course2);
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 
 console.groupEnd();
@@ -216,10 +232,14 @@ console.group("PRACTICE: Arrays");
 //create another array of playing card suits
 //(clubs, diamonds, hearts, spades)
 
+<<<<<<< HEAD
 var suits = ["clubs", "diamonds", "hearts", "spaces"];
 suits.push("jokers");
 console.log(suits);
 console.log(suits[suits.length-1]);
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 //then add a new element named "jokers"
 //afer adding it, access it in the array
 //and log it to the console
@@ -307,7 +327,10 @@ console.groupCollapsed("Functions");
 function reverseString(s) {
     var reversed = "";
     var idx;
+<<<<<<< HEAD
     s = String(s);
+=======
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
     for (idx = s.length-1; idx >= 0; idx--) {
         //short form of reversed = reversed + s.charAt(idx)
         reversed += s.charAt(idx);
@@ -363,12 +386,16 @@ console.group("PRACTICE: Functions");
 //and returns the minimum of the two, or the first argument
 //if they are equal to each other. Then call it a few times
 //with various numbers to test it.
+<<<<<<< HEAD
 var minimum = function(a, b) {
     return a < b ? a : b;
 }
 console.log(minimum(1, 2));
 console.log(minimum(100, 10));
 console.log(minimum(100, 100));
+=======
+
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 console.groupEnd();
 
@@ -443,6 +470,7 @@ function generateRandomNumbers(howMany, minimum, maximum) {
 }
 
 //>>> your code goes here!
+<<<<<<< HEAD
 var a1 = generateRandomNumbers(100, 1, 100);
 var a2 = a1.sort(function(a, b) {
     return a - b;
@@ -450,6 +478,8 @@ var a2 = a1.sort(function(a, b) {
 console.log(a2);
 var a3 = a2.map(function(a) { return a * a });
 console.log(a3);
+=======
+>>>>>>> 082cf9644d2f5f8840b2056bdd06b113719c25e6
 
 
 //now use the .sort() method on a generated array of random
