@@ -10,6 +10,45 @@
 const baseURL = "https://api.spotify.com/v1/search?type=track&q=";
 
 
+class TrackCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+
+        var styles = {
+            backgroundImage : "url(" + this.props.track.album.images[0].url + ")"
+        };
+        return(
+            <div className="card">
+                <div style={styles} className="card-image">
+
+                </div>
+                <div className="card-content">
+                    <p>{this.props.track.name}</p>
+                </div>
+            </div>
+        );
+    }
+}
+
+class TrackList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        if(this.props.tracks.items) {
+            var cards = this.props.tracks.items.map(track => 
+            <TrackCard key={track.id} track={track}></TrackCard>);
+            return <div>{cards}</div>;
+        } else {
+            return <p></p>;
+        }
+    }
+}
+
 /**
  * SpotifyApp - main application component
  */
@@ -22,16 +61,34 @@ class SpotifyApp extends React.Component {
         };
     }
 
+    // Notice when input box has text in it
+    handleChange(event) {
+        // Can pass subset of properties to change less than 
+        // all of the state
+        this.setState({query : event.target.value});
+    }
+
+    // Form submit
+    handleSubmit(event) {
+        event.preventDefault();
+        // console.log(this.state.query);
+        fetch(baseURL + this.state.query)
+            .then(response => response.json())
+            .then(data => this.setState({tracks : data.tracks}));
+    }
+
     render() {
         return (
             <div>
-                <form className="search-form">
+                <form className="search-form"
+                    onSubmit={event => this.handleSubmit(event)}>
                     <div className="input-group">
                         <input type="text" className="form-control"
                             value={this.state.query} 
                             placeholder="what do you want to listen to?"
                             autoFocus                              
-                            required />
+                            required
+                            onChange={event => this.handleChange(event)}/>
                         <span className="input-group-btn">
                             <button className="btn btn-primary" 
                                 aria-label="search spotify">
@@ -43,7 +100,7 @@ class SpotifyApp extends React.Component {
                     </div>
                 </form>
 
-
+                <TrackList tracks={this.state.tracks} />
 
             </div>
         );

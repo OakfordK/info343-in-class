@@ -12,16 +12,30 @@ import React from "react";
 //directory 
 import "./css/main.css";
 
+import {Link, IndexLink} from "react-router";
+
 export default class extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
+        // this.props.children passes the active route to the 
+        // given div
         return (
             <div>
+                <nav>
+                    <ul>
+                        <ui>
+                            <IndexLink to="/" activeClassName="active">Products</IndexLink>
+                        </ui>
+                        <ui>
+                            <Link to="/cart" activeClassName="active">Shopping Cart</Link>
+                        </ui>
+                    </ul>
+                </nav>
                 <main>
-                    <h1>Hello React!</h1>
+                    {this.props.children}
                 </main>
             </div>
         );

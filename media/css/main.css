@@ -13,6 +13,10 @@ video {
 	display: block;
 }
 
+.round {
+	border-radius: 12000px 12000px;
+}
+
 canvas {
 	cursor: pointer;
 	display: block;

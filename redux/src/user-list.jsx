@@ -10,6 +10,9 @@ import "whatwg-fetch";
 
 import UserCard from "./user-card.jsx";
 
+// Import the redux store and the addFavrorite action creator function
+import {store, addFavorite} from "./shared-state.js";
+
 const GITHUB_USERS_API = "https://api.github.com/users";
 
 export default class extends React.Component {
@@ -49,7 +52,9 @@ export default class extends React.Component {
         if (this.state.users) {
             userCards = this.state.users.map(record => 
                 <UserCard key={record.id} user={record}>
-                    <button>Add to Favorites</button>
+                    <button
+                    onClick={() => store.dispatch(addFavorite(record))}>
+                    Add to Favorites</button>
                 </UserCard>
             );
         }
